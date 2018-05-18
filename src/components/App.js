@@ -11,6 +11,7 @@ class Counter extends Component {
     this.unsubscribe = this.subject$.asObservable().subscribe((value) => {
       this.props.dispatch({ type: 'LAST_VALUE', value });
     });
+    this.dispatchValue = this.dispatchValue.bind(this)
   }
   dispatchValue() {
     // I emit the new value
@@ -34,7 +35,7 @@ class Counter extends Component {
     return (
       <div>
         <p>
-          <button className="button" onClick={this.dispatchValue.bind(this)}>
+          <button className="button" onClick={this.dispatchValue}>
             Random Value
           </button>          
         </p>
