@@ -1,7 +1,12 @@
-body {
+#root {
+  display: flex;
   text-align: center;
-  margin-left: 40%;
-  max-width: 200px;
+  justify-content: center;
+}
+
+#root > div {
+  flex-direction: column;
+  width: 220px;
 }
 
 .border {
